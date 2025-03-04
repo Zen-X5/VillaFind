@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate') -%>
+
+<form action="/listing/new" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+    <!-- mb-3 gives spaces below -->
+    <div class="mb-3">
+        <label for="title" class="form-label"><i>Title </i></label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
+        <div class="valid-feedback">Title looks good</div>
+        <div class="invalid-feedback">Title cannot be empty</div>
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label"><i>Description </i></label>
+        <textarea name="description" rows="5" cols="30" id="desc" class="form-control" placeholder="Add a description" required></textarea>
+        <div class="valid-feedback">Description looks good</div>
+        <div class="invalid-feedback">Description cannot be empty</div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label"><i>Upload Image </i></label>
+        <input type="file" name="image" id="image" class="form-control"  required>
+        <div class="invalid-feedback">Image cannot be empty</div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label"><i>Price(&#x20B9;) </i></label>
+            <input required class="form-control" type="number" id="price" name="price" placeholder="Price">
+            <div class="valid-feedback">Price looks good</div>
+            <div class="invalid-feedback">Price cannot be empty</div>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label"><i>Location </i></label>
+            <input required type="text" class="form-control" id="location" name="location" placeholder="Location">
+            <div class="valid-feedback">Location looks good</div>
+            <div class="invalid-feedback">Location cannot be empty</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label"><i>Country </i></label>
+        <input required type="text" id="country" class="form-control" name="country" placeholder="Country">
+        <div class="valid-feedback">Country name looks good</div>
+        <div class="invalid-feedback">Country name cannot be empty</div>
+    </div>
+    <button class="btn btn-danger">Add</button>
+</form>

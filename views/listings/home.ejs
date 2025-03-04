@@ -1,0 +1,146 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+    .filters{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+.filter{
+    text-align: center;
+    margin:1rem ;
+    padding-top: 1rem;
+    opacity: 0.75;
+    font-size: small;
+}
+.filter:hover{
+    opacity: 1  ;
+}
+.switch{
+    margin-top: 2.3rem;
+    margin-left: 18rem;
+    font-size: large;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    height: 3rem;
+    padding: 0.5rem;
+    width: 17rem;
+    border-radius: 1rem;
+}
+.gsts{
+    display: none;
+}
+</style>
+<% if(successMsg && successMsg.length){ %>
+    <div class="row">
+        <div class="alert alert-success col-6 offset-3 alert-dismissible fade show " role="alert">
+                <%= successMsg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>
+<% if(errorMsg && errorMsg.length){ %>
+    <div class="row">
+        <div class="alert alert-danger col-6 offset-3 alert-dismissible fade show " role="alert">
+                <%= errorMsg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>
+<% if(successMsg3 && successMsg3.length){ %>
+    <div class="row">
+        <div class="alert alert-success col-6 offset-3 alert-dismissible fade show " role="alert">
+                <%= successMsg3 %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary filters1">
+    <div class="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-chess-rook"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-water-ladder"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-tractor"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-taxi"></i></div>
+            <p>Cabs</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mug-saucer"></i></div>
+            <p>Breakfast</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Domes</p>
+        </div>
+        <div class="form-check-reverse form-switch switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Display total after Taxes</label>
+          </div>
+    </div>
+</nav>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xsm-1">
+    <% for(let listing of allListings){ %>
+        <a class="links-a" href="/listings/<%= listing._id %>">
+            <div class="col mb-3">
+                <div class="card card1 " style="width: 96%;">
+                    <img  src="<%= listing.image.url %>" class="card-img-top" alt="..."  style="height: 20rem;">
+                    <div class="card-body">
+                    <p class="card-text"><b><%= listing.title  %> </b><br>
+                        &#x20B9;<%= listing.price.toLocaleString("en-IN")  %>/night 
+                        <i class="gsts">&nbsp; +18% GST</i>
+                        <br>
+                        <small><%= listing.location %>,<%= listing.country %></small>
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    <% } %>
+
+</div>
+<script>
+// Get all elements with the class 'gsts'
+let gsts = document.querySelectorAll(".gsts");
+
+// Add an event listener to the switch
+let switchTax = document.querySelector("#flexSwitchCheckDefault");
+switchTax.addEventListener("change", () => {
+    // Toggle the display of GST elements based on the switch state
+    if (switchTax.checked) {
+        gsts.forEach(gst => gst.style.display = "inline");
+    } else {
+        gsts.forEach(gst => gst.style.display = "none");
+    }
+});
+</script>
+
+

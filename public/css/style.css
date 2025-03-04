@@ -1,0 +1,150 @@
+body {
+    font-family: "Plus Jakarta Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    min-height: 100vh; 
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+}
+
+.container-fluid{
+    background-color: rgb(255, 255, 255);
+    height: 4.5rem;
+    position: sticky;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.navbar{
+    position: sticky;
+    top: 0rem;
+    height: 4.5rem;
+    background-color: wheat;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.13);
+    z-index: 2;
+}
+.contain{
+    /* For setting up the footer at bottom step 1 */
+    flex:1;
+    margin-left:0.8rem ;
+}
+.navbar-brand>i{
+    font-size: 2rem;
+    color: #fe424d;
+}
+.navbar-brand{
+    color: #fe424d;
+}
+.footer{
+    background-color: #d3cbcb;
+    display: flex;flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    margin-top: 1rem;
+    width: 100%;
+
+}
+.footersocial{
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+.footerterms{
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+.footerterms>a{
+    text-decoration: none;
+    color: #222222;
+}
+.footerterms>a:hover{
+    text-decoration: underline;
+}
+.footersocial>i{
+    font-size: 1.5rem;
+}
+.footersocial>i:hover{
+    text-decoration: underline;
+}
+.footerinfo:hover{
+    text-decoration: underline;
+}
+/* Cards */
+.card{
+    width: 100% ;
+    margin-bottom: 2rem !important;
+    border: none ;
+    margin-right: 0px;
+}
+.card1:hover{
+    opacity: 0.8;
+    background-color: white;
+}
+.card-img-top{
+    border-radius: 1rem;
+    object-fit: cover !important;
+}
+.links-a{
+    text-decoration: none;
+    border: none;
+}
+.card-body{
+    padding: 0 !important;
+}
+.row{
+    margin-top: 1rem !important;
+}
+
+/* Show page */
+.editimg{
+    height: 40vh;
+    border: none;
+}
+.editcardshow{
+    padding: 1rem;
+}
+.editbtn{
+    background-color: black !important;
+    border: none !important;
+}
+.btns
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.btn1{
+    margin-left: 11rem;
+    margin-right: 5rem;
+}
+.btn2:hover{
+    opacity: 0.8;
+    background-color: white;
+}
+body {
+    font-family: "Plus Jakarta Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.contain {
+    margin-left :0.8rem ;
+}
+
+.footer{
+    background-color :#d3cbcb ;
+    
+}
+.alertError{
+    margin-left: 15rem;
+}
+/* Maps */
+#map { 
+    height: 400px;
+    width: 88vh;
+}
